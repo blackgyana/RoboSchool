@@ -1,6 +1,7 @@
 :root{
     --bg-color: #141024;
     --container-max: 1160px;
+    --color-red: #D52027;
 }
 
 *{
@@ -87,6 +88,40 @@ h1{
     font-weight: 600;
 }
 
+h2{
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 80px;
+}
+
+h4{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38px;
+
+
+    &.info{
+        position: relative;
+        width: fit-content;
+        &::after{
+            content: 'i';
+            position: absolute;
+            top: 0;
+            right: -2rem;
+            font-size: 1rem;
+            background-color: #14102414;
+            border-radius: 100%;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1rem;
+        }
+        
+    }
+}
+
 p{
     font-weight: 400;
     font-size: 18px;
@@ -97,9 +132,14 @@ p{
     }
 }
 
+span{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}
 
+/* SECTIONS */
 section{
-    aspect-ratio: 16/9;
     background-color: white;
 
     &.hero{
@@ -113,19 +153,23 @@ section{
             flex-direction: column;
             justify-content: center;
 
-            > .info{
+            > .info-block{
                 height: fit-content;
                 width: 100%;
-                padding-bottom: 3rem;
+                padding-bottom: 2.5rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                gap: 2.5rem;
+                gap: 3rem;
+
+                h1{
+                    line-height: 3rem;
+                }
 
                 a.cta-button{
-                    padding: 1.4rem 3rem;
+                    padding: 1.5rem 3.5rem;
                     border-radius: 5px;
-                    background-color: #D52027;
+                    background-color: var(--color-red);
                     width: fit-content;
                     height: fit-content;
                 }
@@ -151,30 +195,95 @@ section{
             }
         }
     }
-}
 
+    &.details{
+        padding: 7.5rem 0;
 
+        .text{
+            height: fit-content;
+            font-size: 2rem;
+            line-height: 3rem;
+            font-weight: 400;
+        
+            strong{
+                font-weight: 600;
+            }
+        }
 
+        .stats{
+            display: flex;
+            justify-content: flex-start;
+            gap: 4.5rem;
 
-.text{
-    font-size: 2rem;
-    line-height: 3rem;
-    font-weight: 400;
+            .block{
+                min-width: 200px;
+                width: fit-content;
+                max-width: calc(var(--container-max) / 3.5);
+                h1{
+                    margin-bottom: 5px;
+                }
+                span{
+                    /* text-wrap: balance; */
+                    text-wrap: nowrap;
+                }
+            }
+        }
 
-    strong{
-        font-weight: 600;
+    }
+
+    &.results{
+        background-color: #F9F9F9;
+        padding: 6rem 0;
+
+        .blocks{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5rem;
+
+            .block{
+                h4{
+                    margin-bottom: 1.2rem;
+                }
+                span{
+                    text-wrap: balance;
+                }
+            }
+
+            
+        }
     }
 }
+
+
+
+
+/* COLORS */
+.red{
+    color: var(--color-red);
+}
+
+/* LAYOUT */
 
 .flex{
     display: flex;
 }
 
-.gap{
+.column{
+    flex-direction: column;
+}
+
+.gap-2{
     gap: 2rem;
+}
+.gap-4{
+    gap:4rem;
 }
 .space-between{
     justify-content: space-between;
+}
+
+.layout-16-9{
+    aspect-ratio: 16/9;
 }
 
 
