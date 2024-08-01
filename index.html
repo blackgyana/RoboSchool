@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
     <title>ROBO school</title>
 </head>
@@ -52,10 +56,11 @@
             <div class="container flex column gap-4">
                 <!-- Вступление -->
                 <div class="text">
-                    
-                        <strong>Robo School</strong> – учреждение для формирования кадрового<br> педагогического резерва в сфере
+
+                    <strong>Robo School</strong> – учреждение для формирования кадрового<br> педагогического резерва в
+                    сфере
                     робототехники<br> и программирования
-                    
+
                 </div>
                 <!-- Показатели -->
                 <div class="stats">
@@ -79,9 +84,9 @@
                         <span>Обученных детей на базе <br>собственных центров</span>
                     </div>
                 </div>
-            
+
             </div>
-           
+
         </section>
 
         <section class="results">
@@ -90,22 +95,101 @@
                 <div class="blocks">
                     <div class="block">
                         <h4>Удостоверение</h4>
-                        <span>Дающее право преподавать робототехнику для детей 6-12 лет в образовательных учреждениях</span>
+                        <span>Дающее право преподавать робототехнику для детей 6-12 лет в образовательных
+                            учреждениях</span>
                     </div>
                     <div class="block">
                         <h4>Знания</h4>
-                        <span>По основам разработки учебно-методических комплексов <br>по робототехнике и программированию</span>
+                        <span>По основам разработки учебно-методических комплексов <br>по робототехнике и
+                            программированию</span>
                     </div>
                     <div class="block">
-                        <h4 class="info">Практику</h4>
-                        <span>Возможность пройти практику <br>по преподаванию робототехники на базе </br>R:ED LAB (в оффлайн или онлайн формате)</span>
+                        <h4 class="hint">
+                            Практику
+                            <div class="info">
+                                <div class="info-hint">При наличии свободных мест</div>
+                            </div>
+                        </h4>
+                        <span>Возможность пройти практику <br>по преподаванию робототехники на базе </br>R:ED LAB (в
+                            оффлайн или онлайн формате)</span>
                     </div>
                 </div>
             </div>
-            
+
+        </section>
+
+        <section class="tutors">
+            <div class="container flex column gap-4">
+                <h2>Профессиональные тренеры</h2>
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card flex column gap-1">
+                                <img src="img/person1.png" alt="" class="image">
+                                <div class="name">Ирина Лайм</div>
+                                <div class="profession">преподаватель по робототехнике</div>
+                                <div class="details-btn">Подробнее</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card flex column gap-1">
+                                <img src="img/person2.jpg" alt="" class="image">
+                                <div class="name">Марина Орлова</div>
+                                <div class="profession">преподаватель по робототехнике</div>
+                                <div class="details-btn">Подробнее</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card flex column gap-1">
+                                <img src="img/person3.jpg" alt="" class="image">
+                                <div class="name">Максим Петров</div>
+                                <div class="profession">преподаватель по программированию</div>
+                                <div class="details-btn">Подробнее</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card flex column gap-1">
+                                <img src="img/person4.jpg" alt="" class="image">
+                                <div class="name">Константин Назаров</div>
+                                <div class="profession">преподаватель по робототехнике</div>
+                                <div class="details-btn">Подробнее</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card flex column gap-1">
+                                <img src="img/person5.jpg" alt="" class="image">
+                                <div class="name">Лиза Весенняя</div>
+                                <div class="profession">преподаватель по программированию</div>
+                                <div class="details-btn">Подробнее</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-navigation-block">
+                        <div class="swiper-scrollbar"></div>
+                        <div class="swiper-navigation"></div>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
     </main>
 
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 'auto',
+            speed: 400,
+            spaceBetween: 40,
+            loop: true,
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+        });
+
+    </script>
 
 </body>
 
