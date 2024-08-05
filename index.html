@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
+    <script src="js/inputmask.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <title>ROBO school</title>
 </head>
 
@@ -22,9 +22,9 @@
         <div class="header-container flex space-between">
             <a href="" class="logo">ROBO.SCHOOL</a>
             <nav>
-                <a href="">О школе</a>
-                <a href="">Тренеры</a>
-                <a href="">Стоимость</a>
+                <a class="link" href="">О школе</a>
+                <a class="link" href="">Тренеры</a>
+                <a class="link"href="">Стоимость</a>
             </nav>
             <a href="" class="call-number">+7 800 000 11 22</a>
         </div>
@@ -39,14 +39,14 @@
                         <p class="subtitle">
                             Курсы повышения квалификации по робототехнике <br>для педагогов начальной школы
                         </p>
-                        <a class="cta-button">
+                        <button class="cta-button">
                             <p>Записаться на курс</p>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <div class="hero__right">
-                    <img src="img/hero-illustration.png" alt="">
+                    <img src="img/hero-illustration.webp" alt="">
                 </div>
 
 
@@ -106,9 +106,10 @@
                     <div class="block">
                         <h4 class="hint">
                             Практику
-                            <div class="info">
+                            <span class="tooltip">
+                                <span class="info"></span>
                                 <div class="info-hint">При наличии свободных мест</div>
-                            </div>
+                            </span>
                         </h4>
                         <span>Возможность пройти практику <br>по преподаванию робототехники на базе </br>R:ED LAB (в
                             оффлайн или онлайн формате)</span>
@@ -129,7 +130,7 @@
                                 <img src="img/person1.png" alt="" class="image">
                                 <div class="name">Ирина Лайм</div>
                                 <div class="profession">преподаватель по робототехнике</div>
-                                <div class="details-btn">Подробнее</div>
+                                <button class="details-btn">Подробнее</button>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -137,7 +138,7 @@
                                 <img src="img/person2.jpg" alt="" class="image">
                                 <div class="name">Марина Орлова</div>
                                 <div class="profession">преподаватель по робототехнике</div>
-                                <div class="details-btn">Подробнее</div>
+                                <button class="details-btn">Подробнее</button>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -145,7 +146,7 @@
                                 <img src="img/person3.jpg" alt="" class="image">
                                 <div class="name">Максим Петров</div>
                                 <div class="profession">преподаватель по программированию</div>
-                                <div class="details-btn">Подробнее</div>
+                                <button class="details-btn">Подробнее</button>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -153,7 +154,7 @@
                                 <img src="img/person4.jpg" alt="" class="image">
                                 <div class="name">Константин Назаров</div>
                                 <div class="profession">преподаватель по робототехнике</div>
-                                <div class="details-btn">Подробнее</div>
+                                <button class="details-btn">Подробнее</button>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -161,7 +162,7 @@
                                 <img src="img/person5.jpg" alt="" class="image">
                                 <div class="name">Лиза Весенняя</div>
                                 <div class="profession">преподаватель по программированию</div>
-                                <div class="details-btn">Подробнее</div>
+                                <button class="details-btn">Подробнее</button>
                             </div>
                         </div>
 
@@ -169,16 +170,117 @@
 
                     <div class="swiper-navigation-block">
                         <div class="swiper-scrollbar"></div>
-                        <div class="swiper-navigation"></div>
+                        <div class="swiper-navigation">
+                            <button class="swiper-button-prev">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.333172 17C0.333172 26.2 7.8165 33.6666 16.9998 33.6666L17.4661 33.6602C26.4508 33.413 33.6665 26.044 33.6665 17C33.6665 7.81665 26.1998 0.333313 16.9998 0.333313C7.8165 0.333313 0.333172 7.81665 0.333172 17ZM20.2998 10.3333C20.7832 10.8333 20.7832 11.6166 20.2832 12.1L15.3665 17L20.2832 21.9C20.7832 22.3833 20.7832 23.1833 20.2998 23.6666C19.7998 24.1666 19.0165 24.1666 18.5332 23.6666L12.7165 17.8833C12.4832 17.65 12.3498 17.3333 12.3498 17C12.3498 16.6666 12.4832 16.35 12.7165 16.1166L18.5332 10.3333C18.7665 10.0833 19.0832 9.96665 19.3998 9.96665C19.7332 9.96665 20.0498 10.0833 20.2998 10.3333Z"
+                                        fill="#141024" />
+                                </svg>
+                            </button>
+                            <button class="swiper-button-next">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M33.6668 17C33.6668 26.2 26.1835 33.6666 17.0002 33.6666L16.5339 33.6602C7.5492 33.413 0.333496 26.044 0.333496 17C0.333496 7.81665 7.80016 0.333313 17.0002 0.333313C26.1835 0.333313 33.6668 7.81665 33.6668 17ZM13.7002 10.3333C13.2168 10.8333 13.2168 11.6166 13.7168 12.1L18.6335 17L13.7168 21.9C13.2168 22.3833 13.2168 23.1833 13.7002 23.6666C14.2002 24.1666 14.9835 24.1666 15.4668 23.6666L21.2835 17.8833C21.5168 17.65 21.6502 17.3333 21.6502 17C21.6502 16.6666 21.5168 16.35 21.2835 16.1166L15.4668 10.3333C15.2335 10.0833 14.9168 9.96665 14.6002 9.96665C14.2668 9.96665 13.9502 10.0833 13.7002 10.3333Z"
+                                        fill="#141024" />
+                                </svg></button>
+                        </div>
                     </div>
                 </div>
-
             </div>
 
         </section>
+
+        <section class="plans">
+            <div class="container flex column gap-4">
+                <h2>Выберите нужный пакет</h2>
+
+                <div class="plans-list">
+
+                    <div class="card-plan">
+                        <div class="card-content">
+                            <h3>– PRO –</h3>
+                            <div class="plan-content">
+                                <h2>20.000 ₽</h2>
+                                <div class="description">
+                                    <p>УМК по робототетхнике<br> и программированию</p>
+                                </div>
+                            </div>
+                            <div class="button-cta">Оставить заявку</div>
+                        </div>
+                    </div>
+
+                    <div class="card-plan">
+                        <div class="card-content">
+                            <h3>– ROBO –</h3>
+                            <div class="plan-content">
+                                <h2>15.000 ₽</h2>
+                                <div class="description">
+                                    <p>УМК по робототетхнике</p>
+                                </div>
+                            </div>
+                            <div class="button-cta">Оставить заявку</div>
+                        </div>
+                    </div>
+                    <div class="card-plan">
+                        <div class="card-content">
+                            <h3>– PROG –</h3>
+                            <div class="plan-content">
+                                <h2>10.000 ₽</h2>
+                                <div class="description">
+                                    <p>УМК по программированию</p>
+                                </div>
+                            </div>
+                            <div class="button-cta">Оставить заявку</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form">
+            <div class="container">
+                <div class="form-label">
+                    <h3>Запишитесь на курс<br>со скидкой 10%</h3>
+                    <p class="subtitle">Акция действительна до 10 ноября 2024 года</p>
+                </div>
+                <div class="form-action">
+                    <form id="contact-form" action="" autocomplete="off">
+                        <label>
+                            <input required id="name" type="text" name="name" placeholder="Имя">
+                        </label>
+                        <label >
+                            <input required id="tel" type="tel" name="tel" placeholder="Телефон">
+                        </label>
+                        <label>
+                            <input required id="email" type="email" name="email" placeholder="Email">
+                        </label>
+                        <button type="submit">Оформить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <footer>
+        <div class="container">
+            <div class="company">
+                <h3>ROBO.SCHOOL</h3>
+                <p>© ROBO SCHOOL</p>
+            </div>
+            <div class="contacts">
+                <a href="tel:+78000001122">
+                    <h3>+7 800 000 11 22</h3>
+                </a>
+            </div>
+        </div>
+    </footer>
+
     <script>
+        // Swiper slider
         const swiper = new Swiper('.swiper', {
             slidesPerView: 'auto',
             speed: 400,
@@ -187,8 +289,57 @@
             scrollbar: {
                 el: ".swiper-scrollbar",
             },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
 
+        // Form validation
+        var selector = document.querySelector("input[type='tel']");
+        var im = new Inputmask("+7 (999)-999-99-99");
+        im.mask(selector);
+        const validation = new JustValidate('form#contact-form', {
+            tooltip: {
+                position: 'right',
+            },
+        });
+        validation
+            .addField('#name', [
+                {
+                    rule: 'minLength',
+                    value: 3,
+                    errorMessage: 'Минимум 3 символа',
+                },
+                {
+                    rule: 'maxLength',
+                    value: 30,
+                    errorMessage: 'Максимум 30 символа',
+                },
+                {
+                    rule: 'required',
+                    errorMessage: 'Заполните поле',
+                },
+            ])
+            .addField('#tel', [
+                {
+                    validator: function (name, value) {
+                        const phone = selector.inputmask.unmaskedvalue().replaceAll('+','').replaceAll('()','').replaceAll(')','').replaceAll('-','').replaceAll(' ','')
+                        return Number(phone) && phone.length === 10
+                    },
+                    errorMessage: 'Номер должен содержать 10 цифр',
+                }
+            ])
+            .addField('#email', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Заполните поле',
+                },
+                {
+                    rule: 'email',
+                    errorMessage: 'Укажите валидный Email',
+                },
+            ]);
     </script>
 
 </body>
