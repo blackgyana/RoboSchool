@@ -2,6 +2,9 @@
     --color-bg: #141024;
     --container-max: 1160px;
     --color-red: #D52027;
+    --modal-max-width: 940px;
+    --modal-max-height: 768px;
+    
 }
 
 * {
@@ -146,7 +149,7 @@ h4 {
 p {
     font-weight: 400;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 2rem;
 
 }
 span {
@@ -156,15 +159,15 @@ span {
 }
 
 /* modificators */
-&.subtitle {
+.subtitle {
     font-size: 20px;
 }
 
-&.light{
+.light{
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
-    color: #141024B2;
+    color: #141024a9;
 }
 
 
@@ -756,45 +759,65 @@ input {
 
 .modal{
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     background: rgba(0,0,0,.3);
     z-index: 999;
-    opacity: 1;
+    /* opacity: 1;
     transition: opacity .2s ease-in;
     pointer-events: auto;
     margin: 0;
     padding: 0;
     display: grid;
     place-content: center;
+    pointer-events: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 
 
-    &:target{
+    /* &:target{
         opacity: 1;
         pointer-events: auto;
-    }
+    } */
 
 
     .modal-content{
+        box-sizing: border-box;
         background-color: white;
         border: 1px solid #1410241C;
         border-radius: 20px;
         padding: 40px;
-        width: 100%;
-        height: 100%;
-        max-width: 940px;
-        max-height: 768px;
-        aspect-ratio: 940 / 768;
-        
+        /* width: var(--modal-max-width);
+        height: var(--modal-max-height); */
+        max-width: var(--modal-max-width);
+        max-height: var(--modal-max-height);
+        pointer-events: all;
 
 
         .content-wrapper{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            overflow: hidden;
+            position: relative;
 
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 98%;
+                height: 25px;
+                background-image: linear-gradient(rgba(255, 255, 255, 0.55),rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+            }
 
             .modal-profile{
                 display: flex;
+                justify-content: space-between;
+                flex-direction: row;
                 gap: 40px;
 
                 img.profile-avatar{
@@ -807,6 +830,7 @@ input {
 
                 .profile-info{
                     display: flex;
+                    flex: 1;
                     flex-direction: column;
                     gap: 10px;
                 }
@@ -822,6 +846,7 @@ input {
 
                         &:hover{
                             opacity: .8;
+                            cursor: pointer;
                         }
     
                         &:active{
@@ -834,24 +859,86 @@ input {
                     }
                     
                 }
+                .close-btn-box{
+                    .close-btn{
+                        background: none;
+                        border: none;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 1.6rem;
+                        color: #141024aa;
+                        transition: color .2s ease-out;
+                        padding: 2px;
+    
+                        &:hover{
+                            color: var(--color-red);
+                            cursor: pointer;
+                        }
+                    }
+                }
+                
 
             }
 
-            .modal-body{
-                display: flex;
+            .modal-tabs{
+                height: 100%;
+                box-sizing: border-box;
 
                 .tabs-header{
+                    box-sizing: border-box;
                     list-style: none;
                     display: flex;
                     justify-content: space-between;
+                    gap: 15%;
                     width: 100%;
+                    /* padding-bottom: 20px; */
+                    height: 53px;
+                    border-bottom: 1.5px solid #1410242e;
+                    margin-bottom: 1rem;
 
-                    li>a{
-                        text-decoration: none;
-                        color: #141024;
+                    li{
+                        width: 100%;
+
+                        button{
+                            text-decoration: none;
+                            color: #14102454;
+                            transition: color .2s ease-in;
+                            background: none;
+                            border: none;
+                            font-size: 20px;
+                            line-height: 2rem;
+
+                            &:hover{
+                                color: #141024;
+                            }
+
+                            &:active{
+                                color: var(--color-red);
+                            }
+                        }
                     }
                 }
+
+                .tabs-content{
+                    position: relative;
+                    overflow-y: scroll;
+                    max-height: 340px;
+
+                    .tab{
+                        height: calc(100% - 1rem);
+                    }
+
+                
+    
+                    h4{
+                        padding-top: 40px;
+                        padding-bottom: 20px;
+                    }
+                    
+                }
             }
+
+            
         }
         
     }
