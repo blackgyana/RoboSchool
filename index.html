@@ -24,22 +24,23 @@
     <!-- HEADER -->
     <header>
         <div class="header-container flex space-between">
-            <a href="" class="logo">ROBO.SCHOOL</a>
+            <a href="#top" class="logo">ROBO.SCHOOL</a>
             <nav>
                 <a class="link" href="#details">О школе</a>
                 <a class="link" href="#tutors">Тренеры</a>
                 <a class="link" href="#plans">Стоимость</a>
             </nav>
-            <a href="" class="call-number">+7 800 000 11 22</a>
+            <a href="tel:78000001122" class="call-number">+7 800 000 11 22</a>
             <div class="mobile-btns">
-                <button class="mobile-header call">
+                <button onclick="window.open('tel:78000001122');" class="mobile-header call">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M18.1668 14.3797C17.4951 14.2352 16.9637 14.5471 16.4932 14.8194C16.0114 15.1001 15.0951 15.8434 14.57 15.6531C11.8811 14.546 9.35213 12.1925 8.25739 9.49286C8.06444 8.95647 8.80424 8.0344 9.08283 7.54686C9.35316 7.07492 9.65858 6.53852 9.51928 5.86178C9.3934 5.25366 7.76522 3.18188 7.18947 2.61533C6.80977 2.2411 6.42078 2.03527 6.02147 2.00201C4.5202 1.93756 2.84352 3.94073 2.54945 4.41996C1.81274 5.44181 1.81687 6.80152 2.56183 8.45021C4.35717 12.8786 11.1475 19.5618 15.5925 21.4246C16.4128 21.8082 17.1629 22.0005 17.8366 22.0005C18.496 22.0005 19.0831 21.8165 19.5876 21.4516C19.9684 21.2323 22.0536 19.4724 21.9989 17.9307C21.9659 17.5378 21.7606 17.1448 21.3912 16.7644C20.8289 16.1833 18.7704 14.5065 18.1668 14.3797Z"
                             fill="white" />
                     </svg>
                 </button>
-                <button class="mobile-header burger">
+                <button class="mobile-header burger"
+                    onclick="window.menu.classList.add('open');document.querySelector('html').classList.add('no-scroll')">
                     <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="1" y1="1" x2="25" y2="1" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <line x1="1" y1="6" x2="25" y2="6" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -52,10 +53,10 @@
 
     <!-- MAIN CONTENT -->
     <main>
-        
+
         <section class="hero layout-16-9">
             <div class="header-place"></div>
-            
+
             <div class="container flex gap-2">
                 <div class="hero__left">
                     <div class="info-block">
@@ -90,7 +91,8 @@
                 <!-- Вступление -->
                 <div class="text" data-aos="fade-up">
 
-                    <strong>Robo School</strong> – учреждение для формирования кадрового педагогического резерва в сфере робототехники и программирования
+                    <strong>Robo School</strong> – учреждение для формирования кадрового педагогического резерва в сфере
+                    робототехники и программирования
 
                 </div>
                 <!-- Показатели -->
@@ -239,7 +241,7 @@
                                         <p>УМК по робототетхнике<br> и программированию</p>
                                     </div>
                                 </div>
-                                <a href="#submit" class="button-cta">Оставить заявку</a>
+                                <a href="#submit" class="cta-button">Оставить заявку</a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +256,7 @@
                                         <p>УМК по робототетхнике</p>
                                     </div>
                                 </div>
-                                <a href="#submit" class="button-cta">Оставить заявку</a>
+                                <a href="#submit" class="cta-button">Оставить заявку</a>
                             </div>
                         </div>
                     </div>
@@ -269,7 +271,7 @@
                                         <p>УМК по программированию</p>
                                     </div>
                                 </div>
-                                <a href="#submit" class="button-cta">Оставить заявку</a>
+                                <a href="#submit" class="cta-button">Оставить заявку</a>
                             </div>
                         </div>
                     </div>
@@ -365,6 +367,7 @@
                 </div>
                 <div class="close-btn-box">
                     <button class="close-btn" onclick="window.Irina.close()">Закрыть</button>
+                    <button class="close-btn-mobile" onclick="window.Irina.close()">&#x2715;</button>
                 </div>
             </div>
             <div class="modal-tabs">
@@ -373,6 +376,19 @@
                     <li><button onclick="selectTab(this,2)" class="subtitle">Опыт работы</button></li>
                     <li><button onclick="selectTab(this,3)" class="subtitle">Награды</button></li>
                 </ul>
+                <div class="tabs-header-mobile">
+                    <button class="cta-button">
+                        <span>Образование</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.52875 6.92957C4.50458 6.90603 4.40125 6.81714 4.31625 6.73433C3.78167 6.24886 2.90667 4.98242 2.63958 4.31957C2.59667 4.21891 2.50583 3.9644 2.5 3.82842C2.5 3.69812 2.53 3.57392 2.59083 3.45539C2.67583 3.30764 2.80958 3.18911 2.9675 3.12417C3.07708 3.08236 3.405 3.01741 3.41083 3.01741C3.76958 2.95247 4.3525 2.91675 4.99667 2.91675C5.61042 2.91675 6.16958 2.95247 6.53375 3.00564C6.53958 3.01173 6.94708 3.07668 7.08667 3.14771C7.34167 3.27801 7.5 3.53251 7.5 3.80488V3.82842C7.49375 4.0058 7.33542 4.37884 7.32958 4.37884C7.06208 5.00597 6.23 6.24318 5.67708 6.74042C5.67708 6.74042 5.535 6.88046 5.44625 6.94135C5.31875 7.03633 5.16083 7.08341 5.00292 7.08341C4.82667 7.08341 4.6625 7.03024 4.52875 6.92957Z" fill="white"/>
+                            </svg>
+                    </button>
+                    <ul class="tabs-options">
+                        <li onclick="selectTab(this,1)">Образование</li>
+                        <li onclick="selectTab(this,2)">Опыт работы</li>
+                        <li onclick="selectTab(this,3)">Награды</li>
+                    </ul>
+                </div>
                 <div class="tabs-content">
                     <div class="tab active">
                         <p>Сентябрь 1987 — Июнь 2001
@@ -466,6 +482,7 @@
                 </div>
                 <div class="close-btn-box">
                     <button class="close-btn" onclick="window.Marina.close()">Закрыть</button>
+                    <button class="close-btn-mobile" onclick="window.Marina.close()">&#x2715;</button>
                 </div>
             </div>
             <div class="modal-tabs">
@@ -474,6 +491,19 @@
                     <li><button onclick="selectTab(this,2)" class="subtitle">Опыт работы</button></li>
                     <li><button onclick="selectTab(this,3)" class="subtitle">Награды</button></li>
                 </ul>
+                <div class="tabs-header-mobile">
+                    <button class="cta-button">
+                        <span>Образование</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.52875 6.92957C4.50458 6.90603 4.40125 6.81714 4.31625 6.73433C3.78167 6.24886 2.90667 4.98242 2.63958 4.31957C2.59667 4.21891 2.50583 3.9644 2.5 3.82842C2.5 3.69812 2.53 3.57392 2.59083 3.45539C2.67583 3.30764 2.80958 3.18911 2.9675 3.12417C3.07708 3.08236 3.405 3.01741 3.41083 3.01741C3.76958 2.95247 4.3525 2.91675 4.99667 2.91675C5.61042 2.91675 6.16958 2.95247 6.53375 3.00564C6.53958 3.01173 6.94708 3.07668 7.08667 3.14771C7.34167 3.27801 7.5 3.53251 7.5 3.80488V3.82842C7.49375 4.0058 7.33542 4.37884 7.32958 4.37884C7.06208 5.00597 6.23 6.24318 5.67708 6.74042C5.67708 6.74042 5.535 6.88046 5.44625 6.94135C5.31875 7.03633 5.16083 7.08341 5.00292 7.08341C4.82667 7.08341 4.6625 7.03024 4.52875 6.92957Z" fill="white"/>
+                            </svg>
+                    </button>
+                    <ul class="tabs-options">
+                        <li onclick="selectTab(this,1)">Образование</li>
+                        <li onclick="selectTab(this,2)">Опыт работы</li>
+                        <li onclick="selectTab(this,3)">Награды</li>
+                    </ul>
+                </div>
                 <div class="tabs-content">
                     <div class="tab active">
                         <p>Сентябрь 1995 — Июнь 2000
@@ -567,6 +597,7 @@
                 </div>
                 <div class="close-btn-box">
                     <button class="close-btn" onclick="window.Maxim.close()">Закрыть</button>
+                    <button class="close-btn-mobile" onclick="window.Maxim.close()">&#x2715;</button>
                 </div>
             </div>
             <div class="modal-tabs">
@@ -575,6 +606,19 @@
                     <li><button onclick="selectTab(this,2)" class="subtitle">Опыт работы</button></li>
                     <li><button onclick="selectTab(this,3)" class="subtitle">Награды</button></li>
                 </ul>
+                <div class="tabs-header-mobile">
+                    <button class="cta-button">
+                        <span>Образование</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.52875 6.92957C4.50458 6.90603 4.40125 6.81714 4.31625 6.73433C3.78167 6.24886 2.90667 4.98242 2.63958 4.31957C2.59667 4.21891 2.50583 3.9644 2.5 3.82842C2.5 3.69812 2.53 3.57392 2.59083 3.45539C2.67583 3.30764 2.80958 3.18911 2.9675 3.12417C3.07708 3.08236 3.405 3.01741 3.41083 3.01741C3.76958 2.95247 4.3525 2.91675 4.99667 2.91675C5.61042 2.91675 6.16958 2.95247 6.53375 3.00564C6.53958 3.01173 6.94708 3.07668 7.08667 3.14771C7.34167 3.27801 7.5 3.53251 7.5 3.80488V3.82842C7.49375 4.0058 7.33542 4.37884 7.32958 4.37884C7.06208 5.00597 6.23 6.24318 5.67708 6.74042C5.67708 6.74042 5.535 6.88046 5.44625 6.94135C5.31875 7.03633 5.16083 7.08341 5.00292 7.08341C4.82667 7.08341 4.6625 7.03024 4.52875 6.92957Z" fill="white"/>
+                            </svg>
+                    </button>
+                    <ul class="tabs-options">
+                        <li onclick="selectTab(this,1)">Образование</li>
+                        <li onclick="selectTab(this,2)">Опыт работы</li>
+                        <li onclick="selectTab(this,3)">Награды</li>
+                    </ul>
+                </div>
                 <div class="tabs-content">
                     <div class="tab active">
                         <p>Сентябрь 1995 — Июнь 2000
@@ -668,6 +712,7 @@
                 </div>
                 <div class="close-btn-box">
                     <button class="close-btn" onclick="window.Konstantin.close()">Закрыть</button>
+                    <button class="close-btn-mobile" onclick="window.Konstantin.close()">&#x2715;</button>
                 </div>
             </div>
             <div class="modal-tabs">
@@ -676,6 +721,19 @@
                     <li><button onclick="selectTab(this,2)" class="subtitle">Опыт работы</button></li>
                     <li><button onclick="selectTab(this,3)" class="subtitle">Награды</button></li>
                 </ul>
+                <div class="tabs-header-mobile">
+                    <button class="cta-button">
+                        <span>Образование</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.52875 6.92957C4.50458 6.90603 4.40125 6.81714 4.31625 6.73433C3.78167 6.24886 2.90667 4.98242 2.63958 4.31957C2.59667 4.21891 2.50583 3.9644 2.5 3.82842C2.5 3.69812 2.53 3.57392 2.59083 3.45539C2.67583 3.30764 2.80958 3.18911 2.9675 3.12417C3.07708 3.08236 3.405 3.01741 3.41083 3.01741C3.76958 2.95247 4.3525 2.91675 4.99667 2.91675C5.61042 2.91675 6.16958 2.95247 6.53375 3.00564C6.53958 3.01173 6.94708 3.07668 7.08667 3.14771C7.34167 3.27801 7.5 3.53251 7.5 3.80488V3.82842C7.49375 4.0058 7.33542 4.37884 7.32958 4.37884C7.06208 5.00597 6.23 6.24318 5.67708 6.74042C5.67708 6.74042 5.535 6.88046 5.44625 6.94135C5.31875 7.03633 5.16083 7.08341 5.00292 7.08341C4.82667 7.08341 4.6625 7.03024 4.52875 6.92957Z" fill="white"/>
+                            </svg>
+                    </button>
+                    <ul class="tabs-options">
+                        <li onclick="selectTab(this,1)">Образование</li>
+                        <li onclick="selectTab(this,2)">Опыт работы</li>
+                        <li onclick="selectTab(this,3)">Награды</li>
+                    </ul>
+                </div>
                 <div class="tabs-content">
                     <div class="tab active">
                         <p>Сентябрь 1997 — Июнь 2004
@@ -769,6 +827,7 @@
                 </div>
                 <div class="close-btn-box">
                     <button class="close-btn" onclick="window.Liza.close()">Закрыть</button>
+                    <button class="close-btn-mobile" onclick="window.Liza.close()">&#x2715;</button>
                 </div>
             </div>
             <div class="modal-tabs">
@@ -777,6 +836,19 @@
                     <li><button onclick="selectTab(this,2)" class="subtitle">Опыт работы</button></li>
                     <li><button onclick="selectTab(this,3)" class="subtitle">Награды</button></li>
                 </ul>
+                <div class="tabs-header-mobile">
+                    <button class="cta-button">
+                        <span>Образование</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.52875 6.92957C4.50458 6.90603 4.40125 6.81714 4.31625 6.73433C3.78167 6.24886 2.90667 4.98242 2.63958 4.31957C2.59667 4.21891 2.50583 3.9644 2.5 3.82842C2.5 3.69812 2.53 3.57392 2.59083 3.45539C2.67583 3.30764 2.80958 3.18911 2.9675 3.12417C3.07708 3.08236 3.405 3.01741 3.41083 3.01741C3.76958 2.95247 4.3525 2.91675 4.99667 2.91675C5.61042 2.91675 6.16958 2.95247 6.53375 3.00564C6.53958 3.01173 6.94708 3.07668 7.08667 3.14771C7.34167 3.27801 7.5 3.53251 7.5 3.80488V3.82842C7.49375 4.0058 7.33542 4.37884 7.32958 4.37884C7.06208 5.00597 6.23 6.24318 5.67708 6.74042C5.67708 6.74042 5.535 6.88046 5.44625 6.94135C5.31875 7.03633 5.16083 7.08341 5.00292 7.08341C4.82667 7.08341 4.6625 7.03024 4.52875 6.92957Z" fill="white"/>
+                            </svg>
+                    </button>
+                    <ul class="tabs-options">
+                        <li onclick="selectTab(this,1)">Образование</li>
+                        <li onclick="selectTab(this,2)">Опыт работы</li>
+                        <li onclick="selectTab(this,3)">Награды</li>
+                    </ul>
+                </div>
                 <div class="tabs-content">
                     <div class="tab active">
                         <p>Сентябрь 1995 — Июнь 2000
@@ -838,6 +910,24 @@
     </dialog>
 
 
+    <!-- MENU -->
+    <div class="menu" id="menu">
+        <button class="menu-close-btn" onclick="closeMenu()">
+            <svg width="24" height="24" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="1.05532" y1="-1.05532" x2="16.6082" y2="-1.05532"
+                    transform="matrix(0.681575 0.731748 -0.681575 0.731748 1 2)" stroke="#141024" stroke-width="2.11065"
+                    stroke-linecap="round" />
+                <line x1="1.05532" y1="-1.05532" x2="16.6082" y2="-1.05532"
+                    transform="matrix(0.681575 -0.731748 0.681575 0.731748 1.96094 15)" stroke="#141024"
+                    stroke-width="2.11065" stroke-linecap="round" />
+            </svg>
+        </button>
+        <nav>
+            <a href="#details" onclick="closeMenu()" class="menu-item">О школе</a>
+            <a href="#tutors" onclick="closeMenu()" class="menu-item">Тренеры</a>
+            <a href="#plans" onclick="closeMenu()" class="menu-item">Стоимость</a>
+        </nav>
+    </div>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -884,7 +974,7 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            breakpoints:{
+            breakpoints: {
                 800: {
                     spaceBetween: 40
                 }
@@ -936,6 +1026,52 @@
                     errorMessage: 'Укажите валидный Email',
                 },
             ]);
+    </script>
+
+    <script>
+
+        const closeMenu = () => {
+            window.menu.classList.remove('open'); 
+            document.querySelector('html').classList.remove('no-scroll')
+        }
+
+        const html = document.querySelector('html')
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('dialog').forEach((el) => {
+                const func = el.showModal
+                el.showModal = function () {
+                    html.classList.add('no-scroll')
+                    func.apply(el);
+                }
+
+                el.addEventListener('close', () => {
+                    html.classList.remove('no-scroll')
+                })
+                el.addEventListener('cancel', () => {
+                    html.classList.remove('no-scroll')
+                })
+            })
+        });
+    </script>
+
+    <script>
+        // dropdown menu in modal
+        document.querySelectorAll('.tabs-header-mobile').forEach(el=>{
+            const options = el.querySelector('ul.tabs-options')
+            const btn = el.querySelector('button.cta-button')
+            el.querySelector('.cta-button').addEventListener('click',()=>{
+                options.classList.toggle('open')
+                btn.classList.toggle('active')
+            })
+            options.querySelectorAll('li').forEach(opt=>{
+                opt.addEventListener('click', ()=>{
+                    //set btn text
+                    btn.querySelector('span').textContent = opt.textContent
+                    btn.classList.remove('active')
+                    options.classList.remove('open')
+                })
+            })
+        })
     </script>
 
 </body>
